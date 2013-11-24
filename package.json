@@ -1,0 +1,47 @@
+{
+  "name": "pwuid",
+  "version": "0.0.0",
+  "description": "getpwuid() binding - returns username, name, home directory, shell, gid from uid",
+  "keywords": [
+    "binding",
+    "native",
+    "addon",
+    "uid",
+    "gid",
+    "pw",
+    "posix",
+    "unix",
+    "shell",
+    "home",
+    "dir",
+    "username"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "files": [
+    "index.js",
+    "binding.gyp",
+    "binding.cc"
+  ],
+  "repository": "sindresorhus/pwuid",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "nan": "~0.6.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "os": [
+    "!win32"
+  ],
+  "gypfile": true
+}
