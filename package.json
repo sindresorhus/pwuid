@@ -9,6 +9,7 @@
     "uid",
     "gid",
     "pw",
+    "getpwuid",
     "posix",
     "unix",
     "shell",
