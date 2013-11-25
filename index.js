@@ -10,5 +10,5 @@ module.exports = function (uid) {
 		throw new Error('uid must be a number');
 	}
 
-	return binding.get(uid);
+	return binding(uid);
 };

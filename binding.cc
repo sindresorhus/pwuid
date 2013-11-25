@@ -28,8 +28,8 @@ NAN_METHOD(pwuid) {
 	NanReturnValue(obj);
 }
 
-void init(Handle<Object> exports) {
-	NODE_SET_METHOD(exports, "get", pwuid);
+void init(Handle<Object> exports, Handle<Object> module) {
+	NODE_SET_METHOD(module, "exports", pwuid);
 }
 
 NODE_MODULE(binding, init)
