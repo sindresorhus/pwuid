@@ -2,6 +2,8 @@
 
 > [getpwuid()](http://man7.org/linux/man-pages/man3/getpwnam.3.html) for Node.js - returns username, name, home directory, shell, gid from `uid`
 
+If you're creating a reusable module you should probably use [passwd-user](https://github.com/sindresorhus/passwd-user) instead.
+
 
 ## Install
 
