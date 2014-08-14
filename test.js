@@ -1,6 +1,6 @@
 'use strict';
 var assert = require('assert');
-var pwuid = require('./index')();
+var pwuid = require('./')();
 
 it('should return the an object with properties', function () {
 	console.log(pwuid);
