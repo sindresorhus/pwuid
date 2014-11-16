@@ -1,5 +1,5 @@
 'use strict';
-var binding = require('./build/Release/binding');
+var binding = require('bindings')('binding');
 
 module.exports = function (uid) {
 	if (uid === undefined) {
