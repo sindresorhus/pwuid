@@ -7,7 +7,7 @@ If you're creating a reusable module you should probably use [passwd-user](https
 
 ## Install
 
-```sh
+```
 $ npm install --save pwuid
 ```
 
