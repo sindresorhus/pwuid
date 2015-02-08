@@ -2,10 +2,9 @@
 #include <pwd.h>
 
 #include <node.h>
-#include "nan.h"
+#include <nan.h>
 
 using namespace v8;
-
 
 NAN_METHOD(pwuid) {
 	NanScope();
@@ -17,13 +16,13 @@ NAN_METHOD(pwuid) {
 		NanReturnNull();
 	}
 
-	Local<Object> obj = Object::New();
-	obj->Set(NanSymbol("name"), String::New(pw->pw_name));
-	obj->Set(NanSymbol("uid"),Number::New(pw->pw_uid));
-	obj->Set(NanSymbol("gid"), Number::New(pw->pw_gid));
-	obj->Set(NanSymbol("gecos"), String::New(pw->pw_gecos));
-	obj->Set(NanSymbol("dir"), String::New(pw->pw_dir));
-	obj->Set(NanSymbol("shell"), String::New(pw->pw_shell));
+	Local<Object> obj = NanNew<Object>();
+	obj->Set(NanNew<String>("name"), NanNew<String>(pw->pw_name));
+	obj->Set(NanNew<String>("uid"), NanNew<Number>(pw->pw_uid));
+	obj->Set(NanNew<String>("gid"), NanNew<Number>(pw->pw_gid));
+	obj->Set(NanNew<String>("gecos"), NanNew<String>(pw->pw_gecos));
+	obj->Set(NanNew<String>("dir"), NanNew<String>(pw->pw_dir));
+	obj->Set(NanNew<String>("shell"), NanNew<String>(pw->pw_shell));
 
 	NanReturnValue(obj);
 }
