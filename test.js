@@ -1,10 +1,13 @@
-'use strict';
-var assert = require('assert');
-var pwuid = require('./')();
+import test from 'ava';
+import fn from './';
 
-it('should return the an object with properties', function () {
+test(t => {
+	const pwuid = fn();
+
 	console.log(pwuid);
-	assert.ok(typeof pwuid === 'object');
-	assert.ok(typeof pwuid.name === 'string');
-	assert.ok(typeof pwuid.dir === 'string');
+
+	t.is(typeof pwuid, 'object');
+	t.is(typeof pwuid.name, 'string');
+	t.is(typeof pwuid.dir, 'string');
+	t.end();
 });
