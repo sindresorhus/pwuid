@@ -14,6 +14,7 @@ NAN_METHOD(pwuid) {
 
 	if (pw == NULL) {
 		info.GetReturnValue().Set(Nan::Null());
+		return;
 	}
 
 	Local<Object> obj = Nan::New<Object>();
