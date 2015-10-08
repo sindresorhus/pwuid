@@ -7,28 +7,28 @@
 using namespace v8;
 
 NAN_METHOD(pwuid) {
-	NanScope();
+	Nan::HandleScope scope;
 
-	int uid = args[0]->Uint32Value();
+	int uid = info[0]->Uint32Value();
 	struct passwd *pw = getpwuid(uid);
 
 	if (pw == NULL) {
-		NanReturnNull();
+		info.GetReturnValue().Set(Nan::Null());
 	}
 
-	Local<Object> obj = NanNew<Object>();
-	obj->Set(NanNew<String>("name"), NanNew<String>(pw->pw_name));
-	obj->Set(NanNew<String>("uid"), NanNew<Number>(pw->pw_uid));
-	obj->Set(NanNew<String>("gid"), NanNew<Number>(pw->pw_gid));
-	obj->Set(NanNew<String>("gecos"), NanNew<String>(pw->pw_gecos));
-	obj->Set(NanNew<String>("dir"), NanNew<String>(pw->pw_dir));
-	obj->Set(NanNew<String>("shell"), NanNew<String>(pw->pw_shell));
+	Local<Object> obj = Nan::New<Object>();
+	obj->Set(Nan::New<String>("name").ToLocalChecked(), Nan::New<String>(pw->pw_name).ToLocalChecked());
+	obj->Set(Nan::New<String>("uid").ToLocalChecked(), Nan::New<Number>(pw->pw_uid));
+	obj->Set(Nan::New<String>("gid").ToLocalChecked(), Nan::New<Number>(pw->pw_gid));
+	obj->Set(Nan::New<String>("gecos").ToLocalChecked(), Nan::New<String>(pw->pw_gecos).ToLocalChecked());
+	obj->Set(Nan::New<String>("dir").ToLocalChecked(), Nan::New<String>(pw->pw_dir).ToLocalChecked());
+	obj->Set(Nan::New<String>("shell").ToLocalChecked(), Nan::New<String>(pw->pw_shell).ToLocalChecked());
 
-	NanReturnValue(obj);
+	info.GetReturnValue().Set(obj);
 }
 
 void init(Handle<Object> exports, Handle<Object> module) {
-	NODE_SET_METHOD(module, "exports", pwuid);
+	Nan::SetMethod(module, "exports", pwuid);
 }
 
 NODE_MODULE(binding, init)

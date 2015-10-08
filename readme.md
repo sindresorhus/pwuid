@@ -11,7 +11,7 @@ If you're creating a reusable module you should probably use [passwd-user](https
 $ npm install --save pwuid
 ```
 
-**This is a native binding and expects you to have the required [toolchain](https://github.com/TooTallNate/node-gyp#installation).** *(ignore the node-gyp install)*
+**This is a native binding and expects you to have the required [toolchain](https://github.com/nodejs/node-gyp#installation).** *(ignore the node-gyp install)*
 
 
 ## Windows
@@ -24,7 +24,7 @@ Use [optionalDependencies](https://npmjs.org/doc/json.html#optionalDependencies)
 ## Usage
 
 ```js
-var pwuid = require('pwuid');
+const pwuid = require('pwuid');
 
 console.log(pwuid());
 /*
