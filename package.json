@@ -1,6 +1,6 @@
 {
   "name": "pwuid",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "getpwuid() binding - returns username, name, home directory, shell, gid from uid",
   "keywords": [
     "binding",
