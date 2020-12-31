@@ -1,4 +1,4 @@
-# pwuid [![Build Status](https://travis-ci.org/sindresorhus/pwuid.svg?branch=master)](https://travis-ci.org/sindresorhus/pwuid)
+# pwuid
 
 > [getpwuid()](http://man7.org/linux/man-pages/man3/getpwnam.3.html) for Node.js - returns username, name, home directory, shell, gid from `uid`
 
