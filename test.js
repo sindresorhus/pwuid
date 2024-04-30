@@ -1,8 +1,8 @@
 import test from 'ava';
-import fn from './';
+import getPwuid from './index.js';
 
-test(t => {
-	const pwuid = fn();
+test('main', t => {
+	const pwuid = getPwuid();
 	console.log(pwuid);
 	t.is(typeof pwuid, 'object');
 	t.is(typeof pwuid.name, 'string');

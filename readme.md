@@ -4,15 +4,13 @@
 
 If you're creating a reusable module you should probably use [passwd-user](https://github.com/sindresorhus/passwd-user) instead, as it shells out rather than using a native binding.
 
-
 ## Install
 
-```
-$ npm install --save pwuid
+```sh
+npm install pwuid
 ```
 
 **This is a native binding and expects you to have the required [toolchain](https://github.com/nodejs/node-gyp#installation).** *(ignore the node-gyp install)*
-
 
 ## Windows
 
@@ -20,11 +18,10 @@ $ npm install --save pwuid
 
 Use [optionalDependencies](https://npmjs.org/doc/json.html#optionalDependencies) if you need to include it in a cross-platform environment.
 
-
 ## Usage
 
 ```js
-const pwuid = require('pwuid');
+import pwuid from 'pwuid';
 
 console.log(pwuid());
 /*
@@ -39,7 +36,6 @@ console.log(pwuid());
 */
 ```
 
-
 ## API
 
 Accepts a `uid` number and returns an object with:
@@ -51,9 +47,4 @@ Accepts a `uid` number and returns an object with:
 - `dir`: home directory
 - `shell`: default shell
 
-Will use current user `process.getuid()` if no `uid` is supplied.
-
-
-## License
-
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+It will use the current user `process.getuid()` if no `uid` is given.
